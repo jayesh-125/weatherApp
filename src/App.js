@@ -7,6 +7,8 @@ import cloud from './Cloud.png';
 import haze from './haze.png';
 import mist from './mist.png';
 import Home from './home1.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const ApiData = {
   key: 'f9e5da39676990a4a71e70b6f24b2eee',
   baseUrl: "https://api.openweathermap.org/data/2.5/weather"
@@ -22,7 +24,7 @@ function App() {
         .then(result => {
           if (data) {
             setData(result);
-            setSearch(search);
+            setSearch(search.trim());
           }
           else {
             alert("Enter Your city")
@@ -52,6 +54,7 @@ function App() {
 
   return (
     <div className={(typeof data.main != 'undefined') ? (data?.main?.temp > 25) ? 'App sumer' : 'App winter' : 'App'}>
+      <FontAwesomeIcon icon="fa-solid fa-house" />
       <h1 className="h1" >Weather App</h1>
       <div className='inp-div'>
         <input type="text" name="search" value={search} onChange={(e) => { setSearch(e.target.value) }} onKeyDownCapture={weather} placeholder="Enter Your city" />

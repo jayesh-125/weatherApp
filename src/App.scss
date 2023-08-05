@@ -6,7 +6,8 @@
     display: flex;
     place-items: center;
     flex-direction: column;
-    height: 600px;
+    justify-content: space-around;
+    height: 100vh;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -14,13 +15,18 @@
 * {
     font-family: sans-serif;
 }
+.header{
+    text-align: center;
+    color: #fff;
 
-@media screen and (max-width:375px) {
+}
+@media screen and (max-width:420px) {
     .App {
         width: 100%;
         margin: 0;
-        height: 100%;
+        height: 100vh;
     }
+    
 }
 
 .home {
@@ -48,7 +54,7 @@
 
 .sumer {
     background-color: #fbaf348c;
-    background-image: linear-gradient(315deg, #fbaf34 50%, #ffdd00 50%);
+    background-image: linear-gradient(315deg, #fbaf34 50%, #e54c4c 50%);
 }
 
 .winter {

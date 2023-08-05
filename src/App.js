@@ -87,7 +87,8 @@ function App() {
       ) :
         <>
           <img src={Home} alt="home page" srcset="home page" className='home' />
-          <h1 className='h1'>WELCOME TO MY APP</h1>
+          <h1 className='header'>WELCOME <br />
+            TO WEATHER APP</h1>
         </>
       }
     </div>

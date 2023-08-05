@@ -17,8 +17,24 @@
 
 .header {
     text-align: center;
-    color: #fff;
-
+    background: linear-gradient(30deg, #e5ff00, #fbaf34, #00ff26);
+    text-shadow: 1px 1px 2px #00000022;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all linear 500ms;
+    transform-origin: bottom;
+    animation: backwards head 1s;
+    animation-delay: 500ms;
+}
+@keyframes head {
+    0%{
+        transform: translateY(300px);
+    }50%{
+        transform: translateY(-10px) scale(90%);
+    }100%{
+        transform: translateY(0) scale(100%);
+    }
 }
 
 @media screen and (max-width:420px) {
@@ -93,7 +109,8 @@
     .h1 {
         width: 90%;
         text-align: center;
-        background: linear-gradient(45deg,  #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8b00ff, #ff00ff);
+        background: linear-gradient(30deg, #e5ff00, #fbaf34, #00ff26);
+        text-shadow: 1px 1px 2px #00000022;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;

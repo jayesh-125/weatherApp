@@ -1,4 +1,5 @@
 import './App.scss';
+// import ReactDOM from 'react-dom'
 import React, { useState } from 'react';
 import rain from './raini.png';
 import snoozy from './snowy.png';
@@ -8,6 +9,7 @@ import haze from './haze.png';
 import mist from './mist.png';
 import Home from './home1.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 const ApiData = {
   key: 'f9e5da39676990a4a71e70b6f24b2eee',
@@ -54,8 +56,10 @@ function App() {
 
   return (
     <div className={(typeof data.main != 'undefined') ? (data?.main?.temp > 25) ? 'App sumer' : 'App winter' : 'App'}>
-      <FontAwesomeIcon icon="fa-solid fa-house" />
-      <h1 className="h1" >Weather App</h1>
+      <div className='heading'>
+        {(typeof data.main != 'undefined')?(<FontAwesomeIcon icon={faHome} onClick={()=> window.location.reload()} className='icon' />):" "}
+        <h1 className="h1" >Weather App</h1>
+      </div>
       <div className='inp-div'>
         <input type="text" name="search" value={search} onChange={(e) => { setSearch(e.target.value) }} onKeyDownCapture={weather} placeholder="Enter Your city" />
       </div>
